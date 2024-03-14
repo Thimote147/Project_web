@@ -1,0 +1,25 @@
+{
+  "name": "projet_web",
+  "version": "1.0.0",
+  "description": "Projet web 2024",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thimote147/Projet_web.git"
+  },
+  "author": "FÉTU Thimoté, TAILLET Alexandre, YAHIA Ibrahim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thimote147/Projet_web/issues"
+  },
+  "homepage": "https://github.com/Thimote147/Projet_web#readme",
+  "dependencies": {
+    "express": "^4.18.3",
+    "hbs": "^4.2.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.0"
+  }
+}
