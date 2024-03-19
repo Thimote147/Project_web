@@ -6,6 +6,10 @@ const hbs = require('hbs');
 
 // TODO Require your controllers here
 const indexRouter = require("./routes/index.js");
+const usersRouter = require("./routes/users.js");
+const tournamentsRouter = require("./routes/tournaments.js");
+const courtsRouter = require("./routes/courts.js");
+const coachesRouter = require("./routes/coaches.js");
 
 const app = express();
 const port = 3000;
@@ -21,6 +25,10 @@ app.use(express.static(path.join(__dirname, 'public'))); // Get static files fro
 
 // TODO Call your controllers here
 app.use("/", indexRouter);
+app.use("/users", usersRouter);
+app.use("/tournaments", tournamentsRouter);
+app.use("/courts", courtsRouter);
+app.use("/coaches", coachesRouter);
 
 
 // Create error on page not found
