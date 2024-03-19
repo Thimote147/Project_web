@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Layout page */
+
+#heading,
+#heading div.col-6,
+#heading div.col-3:first-child,
+#heading div.col-3:last-child {
+    display: flex;
+    flex-direction: row;
+}
+
+#heading div.col-6 {
+    justify-content: center;
+}
+
+#heading div.col-3:first-child {
+    justify-content: start;
+    align-items: center;
+}
+
+#heading div.col-3:last-child {
+    justify-content: end;
+    align-items: center;
+}
+
+#heading div.col-3:last-child a {
+    margin: 0 10px;
+}
+
+#logoImage {
+    filter: drop-shadow(0 0 20px black);
+}
+
+#heading div.col-3:last-child a,
+nav ul li a {
+    color: #000;
+    text-decoration: none;
+}
+
+#heading div.col-3:last-child a:hover,
+nav ul li a:hover {
+    color: #D2B48C;
+    text-decoration: underline;
+}
+
+nav ul.navbar-nav li {
+    margin: 0 120px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+}
+
+footer #credits {
+    text-align: center;
+}
