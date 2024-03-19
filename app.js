@@ -4,6 +4,30 @@ const path = require('path');
 const logger = require('morgan');
 const hbs = require('hbs');
 
+/**
+ * eq checks if value are equal
+ */
+hbs.registerHelper('eq', function (a, b) {
+  if (a === b) {
+    return true;
+  }
+  else {
+    return false;
+  }
+});
+
+/**
+ * neq checks if value are not equal
+ */
+hbs.registerHelper('neq', function (a, b) {
+  if (a !== b) {
+    return true;
+  }
+  else {
+    return false;
+  }
+});
+
 // TODO Require your controllers here
 const indexRouter = require("./routes/index.js");
 const usersRouter = require("./routes/users.js");

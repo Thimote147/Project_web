@@ -1,3 +1,57 @@
 <main>
+    {{#if (neq tournaments undefined)}}
     <h1>Liste des tournois</h1>
+
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Maximum number of participants</th>
+        </thead>
+        <tbody>
+            {{#each tournaments}}
+            <tr>
+                <td><a href="/tournaments/details?id={{id}}">{{name}}</a></td>
+                <td>{{date}}</td>
+                <td>{{max_pers}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{#if (neq tournament.id undefined)}}
+    <table>
+        <thead>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Coach who created the tournaments</th>
+            <th>Number of registered person</th>
+            <th>Maximum number of participants</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{tournament.image}}</td>
+                <td>{{tournament.name}}</td>
+                <td>{{tournament.date}}</td>
+                <td>{{tournament.coach}}</td>
+                <td>{{tournament.person}}</td>
+                <td>{{tournament.max_pers}}</td>
+            </tr>
+        </tbody>
+    </table>
+    {{/if}}
+    {{else}}
+    <form action="/tournaments/created" method="post">
+        <label for="name">Name : </label>
+        <input type="text" , name="name" required>
+        <label for="image">Image :</label>
+        <input type="file" name="image" required>
+        <label for="date">Date : </label>
+        <input type="datetime-local" name="date" required>
+        <label for="max_pers">Maximum number of participants : </label>
+        <input type="number" name="max_pers" min="2" required>
+
+        <button type="submit">Create</button>
+    </form>
+    {{/if}}
 </main>
