@@ -2,6 +2,7 @@
 
 * {
     font-family: 'Playfair Display', serif;
+    
 }
 
 /* Layout page */
@@ -14,8 +15,20 @@
     flex-direction: row;
 }
 
+.container-fluid{
+    padding: 0 !important;
+}
+
+#heading{
+    background-color: rgb(253, 253, 253);
+    padding: 10px 0;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2));
+    width: 100%;
+}
+
 #heading div.col-6 {
     justify-content: center;
+
 }
 
 #heading div.col-3:first-child {
@@ -34,7 +47,9 @@
 
 #logoImage {
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+    margin-left: 40px;
 }
+
 
 #heading div.col-3:last-child a,
 nav ul li a {
@@ -52,6 +67,10 @@ nav ul.navbar-nav li {
     margin: 0 120px;
 }
 
+nav {
+    background-color: white;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.3));
+}
 footer {
     display: flex;
     flex-direction: column;
