@@ -21,9 +21,10 @@
 
 #heading{
     background-color: rgb(253, 253, 253);
-    padding: 10px 0;
-    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2));
+    padding: 20px 0 20px 0;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.3));
     width: 100%;
+  
 }
 
 #heading div.col-6 {
@@ -48,6 +49,14 @@
 #logoImage {
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
     margin-left: 40px;
+}
+
+#title{
+    text-transform: uppercase;
+    font-size: 34px;
+    letter-spacing: 7px;
+    font-style: medium;
+    font-weight: 100;
 }
 
 
