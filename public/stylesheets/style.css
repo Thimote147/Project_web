@@ -53,6 +53,7 @@
     letter-spacing: 7px;
     font-style: medium;
     font-weight: 100;
+    user-select: none;
 }
 
 
