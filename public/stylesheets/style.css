@@ -21,7 +21,6 @@
     padding: 20px 0 20px 0;
     filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.3));
     width: 100%;
-  
 }
 
 #heading div.col-6 {
@@ -56,6 +55,7 @@
     font-weight: 100;
 }
 
+
 #headingLine {
     padding: 0 1px 30px 0;
     background-color: black;
@@ -67,13 +67,17 @@
     letter-spacing: 1px;
 }
 
-
+li.nav-item {
+    margin: 5px 100px 0px 0px;
+}
 #heading div.col-3:last-child a,
 nav ul li a,
 #logout-btn {
     color: #000;
     text-decoration: none;
     text-transform: uppercase;
+    display:block;
+    text-align: center;
 }
 
 #heading div.col-3:last-child a:hover,
@@ -85,11 +89,9 @@ nav ul li a:hover,
 }
 
 nav ul.navbar-nav li {
-    margin: 5px 100px 0px 0px;
+    display: inline;
     
 }
-
-
 
 
 nav {
