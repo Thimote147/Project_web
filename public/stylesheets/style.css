@@ -63,7 +63,7 @@
 
 #collapsibleNavbar{
     margin-left: 3%;
-    font-size: 18px;
+    font-size: 15px;
     letter-spacing: 1px;
 }
 
@@ -85,8 +85,11 @@ nav ul li a:hover,
 }
 
 nav ul.navbar-nav li {
-    margin: 10px 100px 0 0px;
+    margin: 5px 100px 0px 0px;
+    
 }
+
+
 
 
 nav {
