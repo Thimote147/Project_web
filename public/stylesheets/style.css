@@ -2,10 +2,7 @@
 
 * {
     font-family: 'Playfair Display', serif;
-    
 }
-
-/* Layout page */
 
 #heading,
 #heading div.col-6,
@@ -63,9 +60,6 @@
     padding: 0 1px 30px 0;
     background-color: black;
 }
-#title_underline{
-
-}
 
 #collapsibleNavbar{
     margin-left: 3%;
@@ -75,14 +69,16 @@
 
 
 #heading div.col-3:last-child a,
-nav ul li a {
+nav ul li a,
+#logout-btn {
     color: #000;
     text-decoration: none;
     text-transform: uppercase;
 }
 
 #heading div.col-3:last-child a:hover,
-nav ul li a:hover {
+nav ul li a:hover,
+#logout-btn:hover {
     color: #D2B48C;
     text-decoration: underline;
 
@@ -104,4 +100,25 @@ footer {
 
 footer #credits {
     text-align: center;
+}
+
+.display {
+    display: flex;
+    flex-direction: row;
+}
+
+.col-4,
+.col-8 {
+    margin: 30px;
+}
+
+.col-4 th {
+    min-width: 150px;
+    text-align: center;
+}
+
+#logout-btn {
+    border: none;
+    background-color: #fff;
+    margin: 5px;
 }

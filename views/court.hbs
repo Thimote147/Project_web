@@ -1,3 +1,36 @@
-<main>
-    <h1>List of courts</h1>
+<main class="display">
+    {{#if (neq booking true)}}
+    <section class="col-4">
+        <h3>Courts list</h3>
+        <table>
+            <thead>
+                <th>Courts</th>
+                <th>Flooring</th>
+            </thead>
+            <tbody>
+                {{#each courts}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{flooring}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </section>
+    <section class="col-8">
+        {{#if (eq court.id undefined)}}
+        <h3>Courts presentation</h3>
+        <div>
+            <h5>Informations about the courts</h5>
+        </div>
+        {{else}}
+        <h3>Court details</h3>
+        <div>
+            <h5>{{court.name}}</h5>
+        </div>
+        {{/if}}
+    </section>
+    {{else}}
+    <p>ok</p>
+    {{/if}}
 </main>

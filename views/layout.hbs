@@ -26,8 +26,12 @@
             </div>
             <div class="col-3">
                 {{#if (eq session.connected true)}}
+                <a href="/">Messages</a>
+                <div id="headingLine"></div>
+                <a href="/">Profile</a>
+                <div id="headingLine"></div>
                 <form action="users/logout" method="post">
-                    <button type="submit">Logout</button>
+                    <button type="submit" id="logout-btnweb">Logout</button>
                 </form>
                 {{else}}
                 <a href="/users/register">Create an account</a>
