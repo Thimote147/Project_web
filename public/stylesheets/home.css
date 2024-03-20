@@ -45,14 +45,15 @@
 
     }
 }
+
+
 @media (min-width: 768px) {
     #home-grids {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 10px;
         grid-auto-rows: minmax(100px, auto);
-        padding: 35px;
-
+        padding: 50px;
     }
     
     #home-grids #img-sec {
@@ -84,4 +85,11 @@
     }
 }
 
+@media (min-width: 1440px) {
+    #home-grids {
+   
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+}
 
