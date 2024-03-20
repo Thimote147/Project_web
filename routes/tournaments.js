@@ -18,7 +18,7 @@ router.get('/creation', (req, res) => {
 });
 
 /* POST new tournament. */
-router.post("created", (req, res) => {
+router.post("/created", (req, res) => {
     res.redirect("/tournaments")
 });
 

@@ -47,7 +47,7 @@
 }
 
 #logoImage {
-    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25));
     margin-left: 40px;
 }
 
@@ -59,22 +59,39 @@
     font-weight: 100;
 }
 
+#headingLine {
+    padding: 0 1px 30px 0;
+    background-color: black;
+}
+#title_underline{
+
+}
+
+#collapsibleNavbar{
+    margin-left: 3%;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
 
 #heading div.col-3:last-child a,
 nav ul li a {
     color: #000;
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 #heading div.col-3:last-child a:hover,
 nav ul li a:hover {
     color: #D2B48C;
     text-decoration: underline;
+
 }
 
 nav ul.navbar-nav li {
-    margin: 0 100px;
+    margin: 10px 100px 0 0px;
 }
+
 
 nav {
     background-color: white;
