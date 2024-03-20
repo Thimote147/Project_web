@@ -60,6 +60,13 @@
                                 <p>Coaches</p>
                             </a>
                         </li>
+                        {{#if (eq session.connected true)}}
+                        <li class="nav-item">
+                            <a href="/courts/booking">
+                                <p>Book a court</p>
+                            </a>
+                        </li>
+                        {{/if}}
                     </ul>
                 </div>
             </div>

@@ -33,7 +33,7 @@
 }
 
 #logoImage {
-    filter: drop-shadow(0 0 20px black);
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
 }
 
 #heading div.col-3:last-child a,
