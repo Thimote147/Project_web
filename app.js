@@ -3,6 +3,7 @@ const createError = require('http-errors');
 const path = require('path');
 const logger = require('morgan');
 const hbs = require('hbs');
+const session = require('express-session');
 
 /**
  * eq checks if value are equal
@@ -46,6 +47,8 @@ app.use(logger('dev')); // Log each request
 app.use(express.urlencoded({ extended: false })); // Decode form values
 app.use(express.static(path.join(__dirname, 'public'))); // Get static files from public folder
 
+app.use(session({ secret: "Your secret key", resave: false, saveUninitialized: false }));
+app.use(function (req, res, next) { res.locals.session = req.session; next(); });
 
 // TODO Call your controllers here
 app.use("/", indexRouter);

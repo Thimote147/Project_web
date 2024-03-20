@@ -27,7 +27,7 @@
             <div class="col-3">
                 {{#if (eq session.connected true)}}
                 <form action="users/logout" method="post">
-                    <button type="submit"></button>
+                    <button type="submit">Logout</button>
                 </form>
                 {{else}}
                 <a href="/users/register">Create an account</a>
@@ -50,16 +50,23 @@
                                 <p>Tournaments</p>
                             </a>
                         </li>
-                        <li>
+                        <li class="nav-item">
                             <a href="/courts">
                                 <p>Courts</p>
                             </a>
                         </li>
-                        <li>
+                        <li class="nav-item">
                             <a href="/coaches">
                                 <p>Coaches</p>
                             </a>
                         </li>
+                        {{#if (eq session.connected true)}}
+                        <li class="nav-item">
+                            <a href="/courts/booking">
+                                <p>Book a court</p>
+                            </a>
+                        </li>
+                        {{/if}}
                     </ul>
                 </div>
             </div>
@@ -68,8 +75,8 @@
     {{{body}}}
     <footer class="container-fluid">
         <p id="credits">
-            <strong>©2024 Vinci Court</strong> | Tous droits réservés. Toute utilisation non autorisée du matériel
-            trouvé sur ce site est interdite.
+            <strong>©2024 Vinci Court</strong> | All rights reserved. Any unauthorized use of materials found on this
+            site is prohibited.
         </p>
     </footer>
 </body>
