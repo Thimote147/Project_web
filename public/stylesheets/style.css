@@ -106,6 +106,7 @@ nav {
 
 #mobile-title {
     display: none;
+    visibility: hidden;
 }
 @media (max-width: 768px) {
     #mobile-title {
