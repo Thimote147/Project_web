@@ -20,7 +20,9 @@
     <header class="container-fluid">
         <section id="heading">
             <div class="col-3">
-                <img id="logoImage" src="/images/HELV_logo_blue_sm.png" alt="Logo" width="50" height="50">
+                <a href="https://www.vinci.be/en">
+                    <img id="logoImage" src="/images/HELV_logo_blue_sm.png" alt="Logo" width="50" height="50">
+                </a>
             </div>
             <div class="col-6">
                 <h1 id="title">Vinci court</h1>
@@ -42,46 +44,48 @@
             </div>
         </section>
         <nav id="navbar-top" class="navbar navbar-expand-md">
-                <!-- Show H3 on mobile ONLY -->
-                <a id="mobile-title" href="/">
-                    <h3>Vinci Court</h3>
-                </a>
-                
-                <button class="navbar-toggler" id="toggler-icon" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-         
-                <!-- Navigation Links -->
-                <div class="collapse navbar-collapse affix-top" id="collapsibleNavbar">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a href="/">
-                                Home
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/tournaments">
-                                Tournaments
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/courts">
-                                Courts
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/coaches">
-                                Coaches
-                            </a>
-                        </li>
-                        {{#if (eq session.connected true)}}
-                        <li class="nav-item">
-                            <a href="/courts/booking">
-                                Book a court
-                            </a>
-                        </li>
-                        {{/if}}
-                    </ul>
+            <!-- Show H3 on mobile ONLY -->
+            <a id="mobile-title" href="/">
+                <h3>Vinci Court</h3>
+            </a>
+
+            <button class="navbar-toggler" id="toggler-icon" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse affix-top" id="collapsibleNavbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="/">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/tournaments">
+                            Tournaments
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/courts">
+                            Courts
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/coaches">
+                            Coaches
+                        </a>
+                    </li>
+                    {{#if (eq session.connected true)}}
+                    <li class="nav-item">
+                        <a href="/courts/booking">
+                            Book a court
+                        </a>
+                    </li>
+                    {{/if}}
+                </ul>
             </div>
         </nav>
     </header>
@@ -95,31 +99,31 @@
 </body>
 
 <script>
-document.addEventListener("DOMContentLoaded", function(){
-  window.addEventListener('scroll', function() {
-      if (window.scrollY > 90) {
-        document.getElementById('navbar-top').classList.add('fixed-top');
-        // add padding top to show content behind navbar
-        navbar_height = document.querySelector('.navbar').offsetHeight;
-        document.body.style.paddingTop = navbar_height + 'px';
+    document.addEventListener("DOMContentLoaded", function () {
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 90) {
+                document.getElementById('navbar-top').classList.add('fixed-top');
+                // add padding top to show content behind navbar
+                navbar_height = document.querySelector('.navbar').offsetHeight;
+                document.body.style.paddingTop = navbar_height + 'px';
 
-        // create a margin bottom
-        document.body.style.marginTop = navbar_height + 'px';
+                // create a margin bottom
+                document.body.style.marginTop = navbar_height + 'px';
 
-        // show navbar title
-        document.getElementById('mobile-title').style.visibility = 'visible';
-      } else {
-        document.getElementById('navbar-top').classList.remove('fixed-top');
-         // remove padding top from body
-        document.body.style.paddingTop = '0';
-        // remove margin top
-        document.body.style.marginTop = '0';
+                // show navbar title
+                document.getElementById('mobile-title').style.visibility = 'visible';
+            } else {
+                document.getElementById('navbar-top').classList.remove('fixed-top');
+                // remove padding top from body
+                document.body.style.paddingTop = '0';
+                // remove margin top
+                document.body.style.marginTop = '0';
 
-        // hide navbar title
-        document.getElementById('mobile-title').style.visibility = 'hidden';
-      } 
-  });
-});     
+                // hide navbar title
+                document.getElementById('mobile-title').style.visibility = 'hidden';
+            }
+        });
+    });     
 </script>
 
 </html>
