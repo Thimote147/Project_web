@@ -130,8 +130,15 @@ nav {
 
 #toggler-icon {
     float: right;
+    border: none;
 }
 
+#toggler-icon:focus,
+#toggler-icon:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
 footer {
     display: flex;
     flex-direction: column;
