@@ -59,6 +59,7 @@
     #home-grids #img-sec {
         grid-column: 1 / 2;
         grid-row: 1 / 4;
+        margin-top: 5px;
     }
 
     #home-grids #img-sec img {
