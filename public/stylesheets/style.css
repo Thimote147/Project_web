@@ -85,10 +85,10 @@ nav ul li a,
 
 #heading div.col-3:last-child a:hover,
 nav ul li a:hover,
-#logout-btn:hover {
+#logout-btn:hover,
+#auth form button:hover {
     color: #D2B48C;
     text-decoration: underline;
-
 }
 
 nav ul.navbar-nav li {
@@ -159,6 +159,13 @@ footer #credits {
     padding: 30px;
 }
 
+.col-4 table,
+.col-8 #court_details,
+.col-8 #courts_presentation {
+    border: #000 2px solid;
+    width: 100%;
+}
+
 .col-4 th {
     min-width: 150px;
     text-align: center;
@@ -170,7 +177,8 @@ footer #credits {
     margin: 5px;
 }
 
-#court_details h5 {
+#court_details h5,
+#courts_presentation h5 {
     text-align: center;
 }
 
@@ -180,7 +188,33 @@ footer #credits {
 }
 
 #court_details #court_img img {
-    width: 100%;
+    width: 80%;
     height: 100%;
     object-fit: cover;
+    margin-left: 10%;
+}
+
+#court_details div {
+    display: flex;
+    flex-direction: row;
+}
+
+#auth {
+    margin: auto;
+    padding: 10px;
+    width: 380px;
+    border: #000 2px solid;
+}
+
+#auth form div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#auth form button {
+    border: #000 2px solid;
+    background-color: #fff;
+    margin-left: 80%;
 }

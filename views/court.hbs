@@ -20,7 +20,7 @@
     <section class="col-8">
         {{#if (eq court.id undefined)}}
         <h3>Courts presentation</h3>
-        <div>
+        <div id="courts_presentation">
             <h5>Informations about the courts</h5>
         </div>
         {{else}}
@@ -30,8 +30,14 @@
             <div id="court_img">
                 <img src="{{court.picture}}" alt="Image of the court">
             </div>
-            <p>{{court.flooring}}</p>
-            <p>{{court.location}}</p>
+            <div>
+                <h6>Flooring type : </h6>
+                <p>{{court.flooring}}</p>
+            </div>
+            <div>
+                <h6>Location : </h6>
+                <p>{{court.location}}</p>
+            </div>
         </div>
         {{/if}}
     </section>
