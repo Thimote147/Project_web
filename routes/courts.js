@@ -15,7 +15,11 @@ router.get('/details', (req, res) => {
 
 /* GET booking court page. */
 router.get('/booking', (req, res) => {
-  res.render('court.hbs', { booking: true });
+  if (req.session.user !== undefined) {
+    res.render('court.hbs', { booking: true });
+  } else {
+    res.render('user.hbs', { form: 'login' });
+  }
 });
 
 module.exports = router;

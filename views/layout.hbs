@@ -29,8 +29,10 @@
             </div>
             <div class="col-3">
                 {{#if (eq session.connected true)}}
+                {{#if (eq session.user.is_coach true)}}
                 <a href="/">Messages</a>
                 <div id="headingLine"></div>
+                {{/if}}
                 <a href="/">Profile</a>
                 <div id="headingLine"></div>
                 <form action="/users/logout" method="post">
@@ -98,33 +100,5 @@
         </p>
     </footer>
 </body>
-
-<!-- <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > 90) {
-                document.getElementById('navbar-top').classList.add('fixed-top');
-                // add padding top to show content behind navbar
-                navbar_height = document.querySelector('.navbar').offsetHeight;
-                document.body.style.paddingTop = navbar_height + 'px';
-
-                // create a margin bottom
-                document.body.style.marginTop = navbar_height + 'px';
-
-                // show navbar title
-                document.getElementById('mobile-title').style.visibility = 'visible';
-            } else {
-                document.getElementById('navbar-top').classList.remove('fixed-top');
-                // remove padding top from body
-                document.body.style.paddingTop = '0';
-                // remove margin top
-                document.body.style.marginTop = '0';
-
-                // hide navbar title
-                document.getElementById('mobile-title').style.visibility = 'hidden';
-            }
-        });
-    });     
-</script> -->
 
 </html>

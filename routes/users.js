@@ -10,25 +10,14 @@ router.get('/', (req, res) => {
 
 /* GET user login page. */
 router.get('/login', (req, res) => {
-    const login = `<form action="/users/login/auth" method="post">
-                        <div>
-                            <label for= "email">Email : </label>
-                            <input type="email" name="email">
-                        </div>
-                        <div>
-                            <label for="password">Password : </label>
-                            <input type="password" name="password">
-                        </div>
-
-                        <button type="submit">login</button>
-                    </form>`;
-    res.render('user.hbs', { form: login });
+    res.render('user.hbs', { form: true });
 });
 
 /* POST login a user */
 router.post("/login/auth", (req, res) => {
     if (bcrypt.compareSync(req.body.password, User.login(req.body.email))) {
         req.session.connected = true;
+        req.session.user = User.data();
         res.redirect("/");
     } else {
         res.redirect("/users/login");
@@ -37,30 +26,7 @@ router.post("/login/auth", (req, res) => {
 
 /* GET user register page. */
 router.get('/register', (req, res) => {
-    const register = `<form action="/users/register/add" method="post">
-                            <div>
-                                <label for= "firstname">Firstname : </label>
-                                <input type="text" name="firstname">
-                            </div>
-                            <div>
-                                <label for= "surname">Surname : </label>
-                                <input type="text" name="surname">
-                            </div>
-                            <div>
-                                <label for= "email">Email : </label>
-                                <input type="email" name="email">
-                            </div>
-                            <div>
-                                <label for="password">Password : </label>
-                                <input type="password" name="password">
-                            </div>
-                            <div>
-                                <label for="confirmation">Confirmation : </label>
-                                <input type="password" name="confirmation">
-                            </div>
-
-                            <button type="submit">register</button></form>`;
-    res.render('user.hbs', { form: register });
+    res.render('user.hbs', { form: false });
 });
 
 /* POST create a user */

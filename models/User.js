@@ -11,3 +11,8 @@ module.exports.login = (email) => {
     const stmt = db.prepare("SELECT password FROM users WHERE email = ?");
     return stmt.get(email).password;
 };
+
+module.exports.data = (email) => {
+    const stmt = db.prepare("SELECT * FROM users WHERE email = ?");
+    return stmt.get(email);
+}
