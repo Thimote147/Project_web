@@ -12,6 +12,7 @@ module.exports.login = (email) => {
     return stmt.get(email).password;
 };
 
+/* Return all informations about the user */
 module.exports.data = (email) => {
     const stmt = db.prepare("SELECT * FROM users WHERE email = ?");
     return stmt.get(email);

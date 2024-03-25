@@ -17,7 +17,7 @@ router.get('/login', (req, res) => {
 router.post("/login/auth", (req, res) => {
     if (bcrypt.compareSync(req.body.password, User.login(req.body.email))) {
         req.session.connected = true;
-        req.session.user = User.data();
+        req.session.user = User.data(req.body.email);
         res.redirect("/");
     } else {
         res.redirect("/users/login");

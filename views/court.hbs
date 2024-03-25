@@ -13,7 +13,7 @@
                     <td>{{flooring}}</td>
                 </tr>
                 {{/each}}
-
+                {{#if (eq session.user.is_coach 1)}}
                 <tr>
                     <td>New court : </td>
                     <td>
@@ -22,14 +22,16 @@
                         </form>
                     </td>
                 </tr>
+                {{/if}}
             </tbody>
         </table>
     </section>
     <section class="col-8">
         {{#if (eq creation true)}}
+        {{#if (eq session.user.is_coach 1)}}
         <h3>Court creation</h3>
         <div class="court_creation">
-            <form action="/courts/created" method="post">
+            <form action="/courts/created" method="post" enctype="multipart/form-data">
                 <label for="name">Name : </label>
                 <input type="text" name="name">
                 <label for="flooring">Flooring : </label>
@@ -54,32 +56,52 @@
                 <button type="submit">Create</button>
             </form>
         </div>
+        {{/if}}
         {{else}}
         {{#if (eq update true)}}
-        <form action="/courts/updated" method="post">
-            <label for="name">Name : </label>
-                <input type="text" name="name" value="{{court.name}}">
-                <label for="flooring">Flooring : </label>
-                <select name="flooring">
-                    <option value="Grass">Grass</option>
-                    <option value="Clay">Clay</option>
-                    <option value="Artificial">Artificial</option>
-                </select>
-                <label for="street">Street : </label>
-                <input type="text" name="street" required>
-                <label for="number">Number : </label>
-                <input type="text" name="number" required>
-                <label for="zipcode">Zipcode : </label>
-                <input type="text" name="zipcode" required>
-                <label for="city">City : </label>
-                <input type="text" name="city" required>
-                <label for="country">Country : </label>
-                <input type="text" name="country" required>
-                <label for="picture">picture : </label>
-                <input type="file" name="picture" value="{{court.picture}}" required>
+        <h3>Court update</h3>
+        <div id="court_update">
+            <form action="/courts/updated" method="post">
+                <div>
+                    <label for="name">Name : </label>
+                    <input type="text" name="name" value="{{court.name}}">
+                </div>
+                <div>
+                    <label for="flooring">Flooring : </label>
+                    <select name="flooring">
+                        <option value="Grass">Grass</option>
+                        <option value="Clay">Clay</option>
+                        <option value="Artificial">Artificial</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="street">Street : </label>
+                    <input type="text" name="street" value="{{court.street}}" required>
+                </div>
+                <div>
+                    <label for="number">Number : </label>
+                    <input type="text" name="number" value="{{court.number}}" required>
+                </div>
+                <div>
+                    <label for="zipcode">Zipcode : </label>
+                    <input type="text" name="zipcode" value="{{court.zipcode}}" required>
+                </div>
+                <div>
+                    <label for="city">City : </label>
+                    <input type="text" name="city" value="{{court.city}}" required>
+                </div>
+                <div>
+                    <label for="country">Country : </label>
+                    <input type="text" name="country" value="{{court.country}}" required>
+                </div>
+                <div>
+                    <label for="picture">Picture : </label>
+                    <input type="file" name="picture" value="{{court.picture}}" required>
+                </div>
 
-                <button type="submit">Update</button>
-        </form>
+                <button type="submit" name="id" value="{{court.id}}">Update</button>
+            </form>
+        </div>
         {{else}}
         {{#if (eq court.id undefined)}}
         <h3>Courts presentation</h3>
@@ -101,11 +123,13 @@
                 <h6>Location : </h6>
                 <p>{{court.location}}</p>
             </div>
+            {{#if (eq session.user.is_coach 1)}}
             <div>
                 <form action="/courts/update" method="get">
                     <button type="submit" name="id" value="{{court.id}}">Update</button>
                 </form>
             </div>
+            {{/if}}
         </div>
         {{/if}}
         {{/if}}

@@ -14,3 +14,8 @@ module.exports.add = (name, flooring, location, picture) => {
     const stmt = db.prepare("INSERT INTO courts (name, flooring, location, picture) VALUES (?, ?, ?, ?)");
     const info = stmt.run(name, flooring, location, picture);
 };
+
+module.exports.update = (id, name, flooring, location, picture) => {
+    const stmt = db.prepare("UPDATE courts SET name = ?, flooring = ?, location = ?, picture = ? WHERE id = ?");
+    const info = stmt.run(name, flooring, location, picture, id);
+};

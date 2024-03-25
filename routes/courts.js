@@ -2,6 +2,21 @@ const express = require('express');
 const router = express.Router();
 const Court = require('../models/Court.js');
 
+const multer = require('multer'); // Need to fix
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'public/images');
+  },
+  filename: function (req, file, cb) {
+    const date = new Date();
+    const uniquePrefix = date.getFullYear() + '-' + (date.getMonth() + 1) +
+      '-' + date.getDate() + '-' + date.getHours() + '-' + date.getMinutes() +
+      '-' + date.getSeconds();
+    cb(null, uniquePrefix + '-' + file.originalname);
+  }
+})
+const upload = multer({ storage: storage });
+
 /* GET courts page. */
 router.get('/', (req, res) => {
   res.render('court.hbs', { courts: Court.all() });
@@ -27,7 +42,7 @@ router.get('/creation', (req, res) => {
 });
 
 /* POST created court page. */
-router.post("/created", (req, res) => {
+router.post("/created", upload.single("picture"), (req, res) => {
   const location = req.body.street + " " + req.body.number + ", " + req.body.zipcode + " " + req.body.city + ", " + req.body.country;
   const picture = "../images/courts/" + req.body.picture;
   Court.add(req.body.name, req.body.flooring, location, picture);
@@ -36,13 +51,29 @@ router.post("/created", (req, res) => {
 
 /* GET court update page. */
 router.get('/update', (req, res) => {
-  console.log(Court.findById(req.query.id));
-  res.render('court.hbs', { courts: Court.all(), update: true, court: Court.findById(req.query.id) })
+  console.log(req.session);
+  if (req.session.connected && req.session.user.is_coach === 1) {
+    const courtInfo = Court.findById(req.query.id)
+    const street = courtInfo.location.split(",")[0].split(" ").slice(0, -1).join(",").replace(/,/g, " ");
+    const number = courtInfo.location.split(",")[0].split(" ").slice(-1).join();
+    const zipcode = courtInfo.location.split(",")[1].split(" ").slice(1, 2).join();
+    const city = courtInfo.location.split(",")[1].split(" ").slice(2).join();
+    const country = courtInfo.location.split(",")[2].slice(1);
+
+    const sepInfo = { id: courtInfo.id, name: courtInfo.name, flooring: courtInfo.flooring, street: street, number: number, zipcode: zipcode, city: city, country: country, picture: courtInfo.picture };
+
+    res.render('court.hbs', { courts: Court.all(), update: true, court: sepInfo });
+  } else {
+    res.render('court.hbs', { courts: Court.all(), court: Court.findById(req.query.id) })
+  }
 });
 
 /* POST updated court. */
 router.post("/updated", (req, res) => {
-  res.redirect("/court/details?id=" + req.body.id);
+  const location = req.body.street + " " + req.body.number + ", " + req.body.zipcode + " " + req.body.city + ", " + req.body.country;
+  const picture = "../images/courts/" + req.body.picture;
+  Court.update(req.body.id, req.body.name, req.body.flooring, location, picture);
+  res.redirect("/courts/details?id=" + req.body.id);
 });
 
 module.exports = router;

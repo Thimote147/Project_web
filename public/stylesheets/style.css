@@ -161,7 +161,8 @@ footer #credits {
 
 .col-4 table,
 .col-8 #court_details,
-.col-8 #courts_presentation {
+.col-8 #courts_presentation,
+.col-8 #court_update {
     border: #000 2px solid;
     width: 100%;
 }
@@ -187,6 +188,12 @@ footer #credits {
     height: 200px;
 }
 
+#court_details div:not(#court_img) {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 100px;
+}
+
 #court_details #court_img img {
     width: 80%;
     height: 100%;
@@ -194,9 +201,14 @@ footer #credits {
     margin-left: 10%;
 }
 
-#court_details div {
+#court_update {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+#court_update div,
+#court_update button {
+    margin: 2%;
 }
 
 #auth {

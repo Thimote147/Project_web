@@ -5,11 +5,11 @@
         <form action="/users/login/auth" method="post">
             <div>
                 <label for="email">Email : </label>
-                <input type="email" name="email">
+                <input type="email" name="email" required>
             </div>
             <div>
                 <label for="password">Password : </label>
-                <input type="password" name="password">
+                <input type="password" name="password" required>
             </div>
 
             <button type="submit">login</button>
@@ -19,23 +19,23 @@
         <form action="/users/register/add" method="post">
             <div>
                 <label for="firstname">Firstname : </label>
-                <input type="text" name="firstname">
+                <input type="text" name="firstname" required>
             </div>
             <div>
                 <label for="surname">Surname : </label>
-                <input type="text" name="surname">
+                <input type="text" name="surname" required>
             </div>
             <div>
                 <label for="email">Email : </label>
-                <input type="email" name="email">
+                <input type="email" name="email" required>
             </div>
             <div>
                 <label for="password">Password : </label>
-                <input type="password" name="password">
+                <input type="password" name="password" required>
             </div>
             <div>
                 <label for="confirmation">Confirmation : </label>
-                <input type="password" name="confirmation">
+                <input type="password" name="confirmation" required>
             </div>
 
             <button type="submit">register</button>
