@@ -30,7 +30,7 @@ hbs.registerHelper('neq', function (a, b) {
 });
 
 // TODO Require your controllers here
-const indexRouter = require("./routes/index.js");
+const homeRouter = require("./routes/home.js");
 const usersRouter = require("./routes/users.js");
 const tournamentsRouter = require("./routes/tournaments.js");
 const courtsRouter = require("./routes/courts.js");
@@ -51,7 +51,7 @@ app.use(session({ secret: "Your secret key", resave: false, saveUninitialized: f
 app.use(function (req, res, next) { res.locals.session = req.session; next(); });
 
 // TODO Call your controllers here
-app.use("/", indexRouter);
+app.use("/", homeRouter);
 app.use("/users", usersRouter);
 app.use("/tournaments", tournamentsRouter);
 app.use("/courts", courtsRouter);
