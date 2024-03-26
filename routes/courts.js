@@ -51,7 +51,6 @@ router.post("/created", upload.single("picture"), (req, res) => {
 
 /* GET court update page. */
 router.get('/update', (req, res) => {
-  console.log(req.session);
   if (req.session.connected && req.session.user.is_coach === 1) {
     const courtInfo = Court.findById(req.query.id)
     const street = courtInfo.location.split(",")[0].split(" ").slice(0, -1).join(",").replace(/,/g, " ");

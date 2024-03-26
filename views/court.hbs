@@ -69,9 +69,21 @@
                 <div>
                     <label for="flooring">Flooring : </label>
                     <select name="flooring">
+                        {{#if (eq court.flooring "Grass")}}
+                        <option value="Grass" selected>Grass</option>
+                        {{else}}
                         <option value="Grass">Grass</option>
+                        {{/if}}
+                        {{#if (eq court.flooring "Clay")}}
+                        <option value="Clay" selected>Clay</option>
+                        {{else}}
                         <option value="Clay">Clay</option>
+                        {{/if}}
+                        {{#if (eq court.flooring "Artificial")}}
+                        <option value="Artificial" selected>Artificial</option>
+                        {{else}}
                         <option value="Artificial">Artificial</option>
+                        {{/if}}
                     </select>
                 </div>
                 <div>
