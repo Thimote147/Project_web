@@ -1,0 +1,18 @@
+#coachSection table {
+    border: #000 1px solid;
+    width: 100%;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+#coachSection th {
+
+    padding: 15px;
+    padding-left: 65px;
+}
+
+#coachSection td {
+    padding: 10px;
+    padding-left: 50px;
+}
+

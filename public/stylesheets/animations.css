@@ -1,0 +1,29 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes letter-spacing-1-3px {
+    0% {
+        letter-spacing: 1px;
+    }
+    
+    100% {
+        letter-spacing: 3px;
+    }
+}
+
+@keyframes letter-spacing-1-5px {
+    0% {
+        letter-spacing: 1px;
+    }
+    
+    100% {
+        letter-spacing: 5px;
+    }
+}

@@ -1,3 +1,23 @@
 <main>
-    <h1>List of coaches</h1>
+    <section class="container-xl my-5 " id="coachSection">
+        <h4>
+            Coaches list
+        </h4>
+        <table>
+            <thead>
+                <th>FIRST NAME</th>
+                <th>LAST NAME</th>
+                <th>EMAIL</th>
+            </thead>
+            <tbody>
+                {{#each coaches}}
+                <tr>
+                    <td><a href="/coaches/bio?id={{id}}">{{firstname}}</a></td>
+                    <td>{{this.surname}}</td>
+                    <td>{{this.email}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </section>
 </main>

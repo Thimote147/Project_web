@@ -20,7 +20,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        filter: brightness(25%);
+        filter: brightness(45%);
     }
 
     #home-grids #title-sec {
@@ -96,32 +96,16 @@
         padding-right: 200px;
     }
 }
-@keyframes letter-spacing-h5 {
-    0% {
-        letter-spacing: 1px;
-    }
-    
-    100% {
-        letter-spacing: 5px;
-    }
-}
+
 #home-grids h5{
     font-size: 18px;
     font-weight: 100;
     letter-spacing: 5px;
     margin: 10px 0 10px 10px;
-    animation: letter-spacing-h5 1.5s;
+    animation: letter-spacing-1-5px 1.5s;
 }
 
-@keyframes letter-spacing-h2 {
-    0% {
-        letter-spacing: 1px;
-    }
-    
-    100% {
-        letter-spacing: 3px;
-    }
-}
+
 #home-grids h2{
     font-size: 34px;
     font-weight: 100;
@@ -129,19 +113,11 @@
     margin: 10px 0 10px 10px;
     letter-spacing: 3px;
 
-    animation: letter-spacing-h2 2s;
+    animation: letter-spacing-1-3px 2s;
 }
 
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    
-    100% {
-        opacity: 1;
-    }
-}
+
 #home-grids p{
     font-size: 16px;
     font-weight: 100;
