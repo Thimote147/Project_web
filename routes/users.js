@@ -31,7 +31,7 @@ router.get('/register', (req, res) => {
 
 /* POST create a user */
 router.post("/register/add", (req, res) => {
-    User.register(req.body.firstname, req.body.surname, req.body.email, bcrypt.hashSync(req.body.password, 10));
+    User.register(req.body.firstname, req.body.surname, req.body.email, bcrypt.hashSync(req.body.password, 10), req.body.is_coach);
     res.redirect("/users/login");
 });
 
