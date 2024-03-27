@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 
 /* GET user login page. */
 router.get('/login', (req, res) => {
-    res.render('user.hbs', { form: true });
+    res.render('user.hbs', { form: "login" });
 });
 
 /* POST login a user */
@@ -26,7 +26,7 @@ router.post("/login/auth", (req, res) => {
 
 /* GET user register page. */
 router.get('/register', (req, res) => {
-    res.render('user.hbs', { form: false });
+    res.render('user.hbs', { form: "register" });
 });
 
 /* POST create a user */

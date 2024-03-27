@@ -1,5 +1,3 @@
-
-
 @media (max-width: 768px) {
     #home-grids {
         grid-template-columns: repeat(3, 1fr);
@@ -27,12 +25,10 @@
         padding-top: 50px;
         grid-column: 1 / 4;
         grid-row: 1 / 2;
-     
         align-self: center;
         justify-self: center;
         text-align: center;
         color: white;
-    
     }
 
     #home-grids #text-sec {
@@ -42,10 +38,8 @@
         padding-left: 15px;
         padding-right: 15px;
         color: white;
-
     }
 }
-
 
 @media (min-width: 768px) {
     #home-grids {
@@ -55,7 +49,7 @@
         grid-auto-rows: minmax(100px, auto);
         padding: 50px;
     }
-    
+
     #home-grids #img-sec {
         grid-column: 1 / 2;
         grid-row: 1 / 4;
@@ -91,13 +85,12 @@
 
 @media (min-width: 1440px) {
     #home-grids {
-   
         padding-left: 200px;
         padding-right: 200px;
     }
 }
 
-#home-grids h5{
+#home-grids h5 {
     font-size: 18px;
     font-weight: 100;
     letter-spacing: 5px;
@@ -105,29 +98,22 @@
     animation: letter-spacing-1-5px 1.5s;
 }
 
-
-#home-grids h2{
+#home-grids h2 {
     font-size: 34px;
     font-weight: 100;
-  
     margin: 10px 0 10px 10px;
     letter-spacing: 3px;
-
     animation: letter-spacing-1-3px 2s;
 }
 
-
-
-#home-grids p{
+#home-grids p {
     font-size: 16px;
     font-weight: 100;
     margin: 10px 0 10px 10px;
     animation: fadeIn 2s;
     text-align: justify;
-    
 }
 
-#home-grids img{
+#home-grids img {
     animation: fadeIn 2s;
 }
-

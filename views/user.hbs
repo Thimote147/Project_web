@@ -1,7 +1,7 @@
 <main>
     <h1>Login &amp; register page.</h1>
     <section id="auth">
-        {{#if (eq form true)}}
+        {{#if (eq form "login")}}
         <form action="/users/login/auth" method="post">
             <div>
                 <label for="email">Email : </label>
@@ -15,7 +15,7 @@
             <button type="submit">login</button>
         </form>
         {{else}}
-        {{#if (eq form false)}}
+        {{#if (eq form "register")}}
         <form action="/users/register/add" method="post">
             <div>
                 <label for="firstname">Firstname : </label>

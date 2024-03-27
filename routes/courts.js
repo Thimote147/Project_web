@@ -30,9 +30,9 @@ router.get('/details', (req, res) => {
 /* GET booking court page. */
 router.get('/booking', (req, res) => {
   if (req.session.user !== undefined) {
-    res.render('court.hbs', { booking: true });
+    res.render('court.hbs', { booking: true, courts: Court.all() });
   } else {
-    res.render('user.hbs', { form: 'login' });
+    res.render('user.hbs', { form: true });
   }
 });
 

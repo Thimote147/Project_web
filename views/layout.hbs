@@ -23,7 +23,7 @@
         <section id="heading">
             <div class="col-3">
                 <a href="https://www.vinci.be/en">
-                <!-- This file is under licence of Creative Commons Attribution – Partage dans les Mêmes Conditions 4.0 International -->
+                    <!-- This file is under licence of Creative Commons Attribution – Partage dans les Mêmes Conditions 4.0 International -->
                     <img id="logoImage" src="/images/HELV_logo_blue_sm.png" alt="Logo" width="50" height="50">
                 </a>
             </div>
@@ -32,11 +32,13 @@
             </div>
             <div class="col-3">
                 {{#if (eq session.connected true)}}
-                {{#if (eq session.user.is_coach true)}}
+                {{#if (eq session.user.is_coach 1)}}
                 <a href="/">Messages</a>
                 <div id="headingLine"></div>
-                {{/if}}
+                <a href="/coaches/bio?id={{session.user.id}}">Profile</a>
+                {{else}}
                 <a href="/">Profile</a>
+                {{/if}}
                 <div id="headingLine"></div>
                 <form action="/users/logout" method="post">
                     <button type="submit" id="logout-btn">Logout</button>
@@ -48,53 +50,55 @@
                 {{/if}}
             </div>
         </section>
-        </header>
-        <nav id="navbar-top" class="navbar navbar-expand-md sticky-top">
-            <!-- Show H3 on mobile ONLY -->
-            <a id="mobile-title" href="/">
-                <h3>Vinci Court</h3>
-            </a>
+    </header>
+    <nav id="navbar-top" class="navbar navbar-expand-md sticky-top">
+        <!-- Show H3 on mobile ONLY -->
+        <a id="mobile-title" href="/">
+            <h3>Vinci Court</h3>
+        </a>
 
-            <button class="navbar-toggler" id="toggler-icon" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <button class="navbar-toggler" id="toggler-icon" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <!-- Navigation Links -->
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a href="/">
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/tournaments">
-                            Tournaments
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/courts">
-                            Courts
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/coaches">
-                            Coaches
-                        </a>
-                    </li>
-                    {{#if (eq session.connected true)}}
-                    <li class="nav-item">
-                        <a href="/courts/booking">
-                            Book a court
-                        </a>
-                    </li>
-                    {{/if}}
-                </ul>
-            </div>
-        </nav>
-  
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/tournaments">
+                        Tournaments
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/courts">
+                        Courts
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/coaches">
+                        Coaches
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+            {{#if (eq session.connected true)}}
+            <li class="nav-item">
+                <a href="/courts/booking">
+                    Book a court
+                </a>
+            </li>
+            {{/if}}
+        </ul>
+        </div>
+    </nav>
+
     {{{body}}}
     <footer class="container-fluid">
         <p id="credits">

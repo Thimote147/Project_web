@@ -1,7 +1,7 @@
 <main class="display">
     <section class="col-4">
         <h3>Courts list</h3>
-        <table>
+        <table id="courts_list">
             <thead>
                 <th>Courts</th>
                 <th>Flooring</th>
@@ -17,7 +17,7 @@
                 <tr>
                     <td>New court : </td>
                     <td>
-                        <form action="/courts/creation" method="get"> <!-- A vérifier si c'est mieux get ou post-->
+                        <form action="/courts/creation" method="get">
                             <button type="submit">Add a court</button>
                         </form>
                     </td>
@@ -119,6 +119,9 @@
         <h3>Courts presentation</h3>
         <div id="courts_presentation">
             <h5>Informations about the courts</h5>
+            <p>Welcome on our courts list page.</p>
+            <p>Here is, on the left, all the courts we have. If you want, you can choose and book one of these at any time.</p>
+            <p>Let's play and enjoy tennis !</p>
         </div>
         {{else}}
         <h3>Court details</h3>
